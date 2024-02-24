@@ -11,7 +11,6 @@ import loginLogo from '@/layout/logo/index.vue'
       <login-logo />
       <layoutLogin />
       <layoutMenu />
-
     </el-col>
     <el-col :xs="2" :sm="0" class="layout-aside">左侧小菜单</el-col>
     <el-col :xs="22" :sm="20" class="layout-main">
@@ -19,7 +18,6 @@ import loginLogo from '@/layout/logo/index.vue'
     </el-col>
   </el-row>
   <!--  登录弹窗-->
-
 </template>
 
 <style scoped lang="scss">

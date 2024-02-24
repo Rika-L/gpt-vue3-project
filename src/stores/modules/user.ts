@@ -9,8 +9,7 @@ let useUserStore = defineStore('user', {
       loginSwitchStatus: false, //登录开关的状态
       token: GET_TOKEN(), //token
       userName: '',
-      remainingQuantity:''
-
+      remainingQuantity: '',
     }
   },
   actions: {
@@ -27,10 +26,10 @@ let useUserStore = defineStore('user', {
     },
 
     //退出登录
-    userLogout(){
-      this.token = '';
-      REMOVE_TOKEN();
-    }
+    userLogout() {
+      this.token = ''
+      REMOVE_TOKEN()
+    },
   },
   getters: {},
 })

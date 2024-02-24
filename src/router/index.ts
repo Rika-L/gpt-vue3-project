@@ -1,5 +1,5 @@
-import { createRouter, createWebHashHistory } from "vue-router";
-import { constantRoute } from "@/router/routes.ts";
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { constantRoute } from '@/router/routes.ts'
 
 let router = createRouter({
   //路由模式
@@ -10,8 +10,8 @@ let router = createRouter({
     return {
       left: 0,
       top: 0,
-    };
+    }
   },
-});
+})
 
-export default router;
+export default router

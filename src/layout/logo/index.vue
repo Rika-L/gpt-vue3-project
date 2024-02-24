@@ -1,6 +1,4 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="layoutLogo">
@@ -10,7 +8,6 @@
       <span class="last">beta</span>
     </div>
   </div>
-
 </template>
 
 <style scoped lang="scss">
@@ -28,7 +25,7 @@
   color: #13ce66;
 }
 
-.last{
+.last {
   font-size: 15px;
 }
 </style>

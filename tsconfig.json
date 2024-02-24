@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-
     //全局组件类型声明
     "types": ["element-plus/global", "vite/client"],
     "target": "ES2020",

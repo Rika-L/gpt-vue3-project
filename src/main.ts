@@ -20,7 +20,6 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 //引入暗黑模式
 import 'element-plus/theme-chalk/dark/css-vars.css'
 
-
 const app = createApp(App)
 
 app.use(pinia)
@@ -39,6 +38,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 //引入路由鉴权文件
-import "./permisstion.ts";
+import './permisstion.ts'
 
 app.mount('#app')

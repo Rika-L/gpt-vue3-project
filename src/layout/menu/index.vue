@@ -3,15 +3,15 @@ import { useRouter } from 'vue-router'
 
 let $router = useRouter()
 const goHome = () => {
-  $router.push('/home');
+  $router.push('/home')
 }
 
 const goFeedback = () => {
-  $router.push('/feedback');
+  $router.push('/feedback')
 }
 
 const goPurchase = () => {
-  $router.push('/purchase');
+  $router.push('/purchase')
 }
 </script>
 

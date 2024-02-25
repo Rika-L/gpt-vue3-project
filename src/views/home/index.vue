@@ -3,7 +3,6 @@ import showApp from '@/views/home/showApp/inedx.vue'
 </script>
 
 <template>
-
   <el-container style="height: 100%">
     <el-main style="height: 100%">
       <el-scrollbar>
@@ -20,7 +19,6 @@ import showApp from '@/views/home/showApp/inedx.vue'
       <div style="text-align: center">
         <el-input placeholder="Please input" class="gpt_input" />
       </div>
-
     </el-footer>
   </el-container>
 </template>
@@ -37,6 +35,4 @@ import showApp from '@/views/home/showApp/inedx.vue'
   width: 75vw;
   height: 7vh;
 }
-
-
 </style>

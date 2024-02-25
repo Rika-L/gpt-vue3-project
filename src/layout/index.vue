@@ -12,7 +12,7 @@ let dark = ref(false)
 const changeDark = () => {
   //获取HTML根节点
   let html = document.documentElement
-  dark.value ? html.className = 'dark' : html.className = ''
+  dark.value ? (html.className = 'dark') : (html.className = '')
 }
 </script>
 
@@ -26,10 +26,9 @@ const changeDark = () => {
       <div style="text-align: center">
         <el-switch
           v-model="dark"
-
           :active-icon="Moon"
           :inactive-icon="Sunny"
-          style="--el-switch-on-color:black"
+          style="--el-switch-on-color: black"
           size="large"
           @change="changeDark"
         />
@@ -51,7 +50,6 @@ const changeDark = () => {
 }
 
 .layout-main {
-
   height: 100vh;
 }
 </style>

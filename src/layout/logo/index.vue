@@ -16,7 +16,6 @@
   height: 15%;
   padding: 5px;
 
-
   .big {
     font-size: 40px;
   }
@@ -30,7 +29,7 @@
   font-size: 15px;
 }
 
-.logoStyle{
+.logoStyle {
   border-bottom: 1px solid var(--el-border-color);
 }
 </style>

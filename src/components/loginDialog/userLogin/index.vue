@@ -61,7 +61,7 @@ const login = async () => {
     loading.value = false
     userStore.loginSwitchStatus = false
     //登录成功后携带token发送获取用户信息请求
-    await userStore.getUserInfo();
+    await userStore.getUserInfo()
   } catch (error) {
     loading.value = false
     ElNotification({
@@ -69,7 +69,6 @@ const login = async () => {
       message: (error as Error).message,
     })
   }
-
 }
 </script>
 

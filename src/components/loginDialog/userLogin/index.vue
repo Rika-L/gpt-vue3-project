@@ -9,7 +9,7 @@ let loginForm = reactive({ username: 'admin', password: '111111' })
 let loading = ref(false)
 let loginForms = ref()
 
-const validatorUserName = (rule: any, value: any, callback: any) => {
+const validatorUserName = (_rule: any, value: any, callback: any) => {
   //rule为校验规则对象
   //value为表单文本的内容
   //callback函数,如果符合条件,通过callback放行
@@ -21,7 +21,7 @@ const validatorUserName = (rule: any, value: any, callback: any) => {
   }
 }
 
-const validatorPassword = (rule: any, value: any, callback: any) => {
+const validatorPassword = (_rule: any, value: any, callback: any) => {
   if (value.length >= 5) {
     callback()
   } else {
@@ -60,6 +60,8 @@ const login = async () => {
     })
     loading.value = false
     userStore.loginSwitchStatus = false
+    //登录成功后携带token发送获取用户信息请求
+    await userStore.getUserInfo();
   } catch (error) {
     loading.value = false
     ElNotification({
@@ -67,6 +69,7 @@ const login = async () => {
       message: (error as Error).message,
     })
   }
+
 }
 </script>
 

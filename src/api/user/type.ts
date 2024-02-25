@@ -25,10 +25,12 @@ interface userInfo {
   buttons: string[]
   routes: string[]
   token: string
+  count: number
 }
 
 interface user {
   checkUser: userInfo
+  message?: string
 }
 
 //定义服务器返回用户信息相关的数据类型

@@ -12,6 +12,7 @@ function createUserList() {
       buttons: ['cuser.detail'],
       routes: ['home'],
       token: 'Admin Token',
+      count: 10
     },
     {
       userId: 2,
@@ -24,6 +25,7 @@ function createUserList() {
       buttons: ['cuser.detail', 'cuser.user'],
       routes: ['home'],
       token: 'System Token',
+      count: 9999
     },
   ]
 }

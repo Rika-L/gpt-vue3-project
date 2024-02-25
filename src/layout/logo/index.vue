@@ -2,7 +2,7 @@
 
 <template>
   <div class="layoutLogo">
-    <div>
+    <div class="logoStyle">
       <span class="first big">Vue</span>
       <span class="big">Chat</span>
       <span class="last">beta</span>
@@ -16,6 +16,7 @@
   height: 15%;
   padding: 5px;
 
+
   .big {
     font-size: 40px;
   }
@@ -27,5 +28,9 @@
 
 .last {
   font-size: 15px;
+}
+
+.logoStyle{
+  border-bottom: 1px solid var(--el-border-color);
 }
 </style>

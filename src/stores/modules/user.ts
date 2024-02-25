@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
-import { reqLogin } from '@/api/user'
+import { reqLogin, reqUserInfo } from '@/api/user'
 import { GET_TOKEN, REMOVE_TOKEN, SET_TOKEN } from '@/utils/token'
-import type { loginForm, loginResponseData } from '@/api/user/type'
+import type { loginForm, loginResponseData, useResponseData } from '@/api/user/type'
 
 let useUserStore = defineStore('user', {
   state: () => {
@@ -10,6 +10,7 @@ let useUserStore = defineStore('user', {
       token: GET_TOKEN(), //token
       userName: '',
       remainingQuantity: '',
+      count: 0,
     }
   },
   actions: {
@@ -25,9 +26,23 @@ let useUserStore = defineStore('user', {
       }
     },
 
+    //获取用户信息
+    async getUserInfo() {
+      let result: useResponseData = await reqUserInfo()
+      console.log(result)
+      if (result.code === 200) {
+        this.userName = result.data.checkUser.username
+        this.count = result.data.checkUser.count
+      } else {
+        console.log(result)
+        return Promise.reject(new Error(result.data.message))
+      }
+    },
+
     //退出登录
     userLogout() {
       this.token = ''
+      this.count = 0
       REMOVE_TOKEN()
     },
   },

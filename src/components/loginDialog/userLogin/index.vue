@@ -1,13 +1,34 @@
 <script setup lang="ts">
-import { User, Lock } from '@element-plus/icons-vue'
-import { reactive, ref } from 'vue'
+import { Lock, User } from '@element-plus/icons-vue'
+import { reactive, ref, watch } from 'vue'
 import useUserStore from '@/stores/modules/user'
 import { ElNotification } from 'element-plus'
+
 const userStore = useUserStore()
 
-let loginForm = reactive({ username: 'admin', password: '111111' })
+let loginForm = reactive({
+  username: 'asdasd',
+  password: 'asd123',
+  mode: 'username',
+})
 let loading = ref(false)
 let loginForms = ref()
+
+const emailRegex: RegExp = /^[\w]+@[A-Za-z]+(\.[A-Za-z0-9]+){1,2}$/
+function isValidEmail(email: string): boolean {
+  return emailRegex.test(email)
+}
+
+watch(
+  () => loginForm.username,
+  (newValue: string) => {
+    if (isValidEmail(newValue)) {
+      loginForm.mode = 'email'
+    } else {
+      loginForm.mode = 'username'
+    }
+  },
+)
 
 const validatorUserName = (_rule: any, value: any, callback: any) => {
   //rule为校验规则对象
@@ -74,7 +95,12 @@ const login = async () => {
 
 <template>
   <div>
-    <el-form :model="loginForm" :rules="rules" ref="loginForms">
+    <el-form
+      :model="loginForm"
+      :rules="rules"
+      ref="loginForms"
+      v-loading="loading"
+    >
       <el-form-item prop="username">
         <el-input
           :prefix-icon="User"
@@ -104,6 +130,7 @@ const login = async () => {
         </el-button>
       </el-form-item>
     </el-form>
+    {{ loginForm }}
   </div>
 </template>
 

@@ -3,7 +3,7 @@
 <template>
   <div class="layoutLogo">
     <div class="logoStyle">
-      <span class="first big">Vue</span>
+      <span class="first big">Pure</span>
       <span class="big">Chat</span>
       <span class="last">beta</span>
     </div>
@@ -22,7 +22,7 @@
 }
 
 .first {
-  color: #13ce66;
+  color: $base-color;
 }
 
 .last {

@@ -12,7 +12,7 @@ const refreshInfo = async () => {
 
 <template>
   <div class="count">
-    <el-badge :value="userStore.count">
+    <el-badge :value="userStore.count" :max="10000">
       <el-button disabled>剩余次数</el-button>
     </el-badge>
     <el-button

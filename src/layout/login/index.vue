@@ -36,10 +36,7 @@ const logout = () => {
           @confirm="logout"
         >
           <template #reference>
-            <el-avatar
-              size="large"
-              style="background-color: #13ce66; font-size: 30px"
-            >
+            <el-avatar size="large" class="avatar">
               {{ userStore.userName.slice(0, 1) }}
             </el-avatar>
           </template>
@@ -54,5 +51,10 @@ const logout = () => {
   text-align: center;
   height: 20%;
   margin-top: 50px;
+
+  .avatar {
+    background-color: $base-color;
+    font-size: 30px;
+  }
 }
 </style>

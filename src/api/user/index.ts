@@ -8,7 +8,7 @@ import type {
 
 //统一管理接口
 enum API {
-  LOGIN_URL = '/user/login',
+  LOGIN_URL = '/api/login/',
   USERINFO_URL = '/user/info',
 }
 

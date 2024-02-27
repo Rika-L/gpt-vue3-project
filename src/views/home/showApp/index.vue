@@ -1,12 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div style="text-align: center; margin-top: 10vh">
-    <span style="color: #13ce66; font-size: 100px">Vue</span>
-    <span style="font-size: 100px">Chat</span>
-    <span style="font-size: 20px">beta</span>
+  <div style="text-align: center; margin-top: 10vh; margin-bottom: 20vh">
+    <el-row>
+      <el-col :xs="0" :sm="24" style="height: 100%; width: 100%">
+        <span class="logoFont">Pure</span>
+        <span style="font-size: 100px">Chat</span>
+        <span style="font-size: 20px">beta</span>
+      </el-col>
+    </el-row>
     <el-row :gutter="12" style="height: 100%; width: 100%">
-      <el-col :span="8">
+      <el-col :xs="0" :sm="8">
         <div class="main_message_icon">
           <Cpu />
         </div>
@@ -45,7 +49,7 @@
           <div>"基于chatGPT3.5"</div>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :xs="0" :sm="8">
         <div class="main_message_icon">
           <Message />
         </div>
@@ -86,7 +90,7 @@
           <div>"写一个温馨的小故事"</div>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :xs="0" :sm="8">
         <div class="main_message_icon">
           <WarningFilled />
         </div>
@@ -126,6 +130,13 @@
         </el-card>
       </el-col>
     </el-row>
+    <el-row>
+      <el-col :xs="24" :sm="0" style="height: 100%; width: 100%">
+        <div class="logoFont">Pure</div>
+        <div style="font-size: 100px">Chat</div>
+        <div style="font-size: 20px">beta</div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -142,5 +153,10 @@
   margin-right: auto;
   width: 40px;
   margin-top: 15px;
+}
+
+.logoFont {
+  color: $base-color;
+  font-size: 100px;
 }
 </style>

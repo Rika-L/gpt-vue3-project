@@ -34,8 +34,23 @@ const changeDark = () => {
         />
       </div>
     </el-col>
-    <el-col :xs="2" :sm="0" class="layout-aside">左侧小菜单</el-col>
-    <el-col :xs="22" :sm="20" class="layout-main">
+    <el-col :xs="4" :sm="0" class="layout-aside">
+      <layoutLogin />
+      <layoutMenu collapse="true" />
+      <!--      切换主题组件-->
+      <div style="text-align: center">
+        <el-switch
+          v-model="dark"
+          :active-icon="Moon"
+          :inactive-icon="Sunny"
+          style="--el-switch-on-color: black"
+          size="large"
+          @change="changeDark"
+          inline-prompt
+        />
+      </div>
+    </el-col>
+    <el-col :xs="20" :sm="20" class="layout-main">
       <router-view></router-view>
     </el-col>
   </el-row>
@@ -47,6 +62,10 @@ const changeDark = () => {
 .layout-aside {
   height: 100vh;
   border-right: 1px solid var(--el-border-color);
+}
+
+.layout-aside-small {
+  height: 100vh;
 }
 
 .layout-main {

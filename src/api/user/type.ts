@@ -2,15 +2,17 @@
 export interface loginForm {
   username: string
   password: string
+  mode: string
 }
 
 interface dataType {
-  message: string
+  username: string
   token: string
 }
 
 //登录接口返回的数据类型
 export interface loginResponseData {
+  error: string
   code: number
   data: dataType
 }
